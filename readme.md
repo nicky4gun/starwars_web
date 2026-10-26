@@ -13,13 +13,24 @@ flowchart LR
 diskuter
 Hvor skal HTTP-requests håndteres?
 
+controlleren
+
 Hvor skal karakterdata gemmes?
+
+json fil kan også være  mongoDB
 
 Hvor skal valideringen placeres?
 
+middelware  og  services alt efter hvilken type validering 
+
 Hvad er fordelen ved jeres valgte arkitektur?
 
+et ansvar for hver del af applikationen per lag 
+
 Hvilke ulemper har den? 
+
+boilerplate kode,
+dublicering af logik 
 
  
 ## løsning dokumentation
