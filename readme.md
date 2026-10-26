@@ -34,7 +34,7 @@ dublicering af logik
 
  
 ## løsning dokumentation
-
+vi har ikke valgt mvc i nu 
 
 
 ## Besvar kort:
