@@ -1,0 +1,264 @@
+{
+  "info": {
+    "_postman_id": "e63ba485-e052-4856-b89d-db483d1467e3",
+    "name": "StarWars api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54353033",
+    "_collection_link": "https://go.postman.co/collection/54353033-e63ba485-e052-4856-b89d-db483d1467e3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "allcharacters",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/characters",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "byid",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/characters/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ukendt karakter",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/characters/999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "opret ny karakter",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"han solo\",\r\n    \"role\": \"Rebel\",\r\n    \"planet\": \"corellia\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/characters",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "opret ny uden navn",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"\",\r\n    \"role\":\"Rebel\",\r\n    \"planet\": \"corellia\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/characters",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "opret uden rolle",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"han solo\",\r\n    \"role\":\"\",\r\n    \"planet\": \"corellia\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/characters",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "opret uden planet",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"han solo\",\r\n    \"role\":\"Rebel\",\r\n    \"planet\": \"\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/characters",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updater karakter",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"han solo\",\r\n    \"role\":\"Rebel\",\r\n    \"planet\": \"corellia\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/characters/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ukendtupdate",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"han solo\",\r\n    \"role\":\"Rebel\",\r\n    \"planet\": \"corellia\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/characters/999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/characters/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ukendtdelete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/characters/999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "characters",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
