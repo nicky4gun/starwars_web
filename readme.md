@@ -192,22 +192,35 @@ hvad den forslog
 hvad vi har ladet den endre og hvorfor  
 vi har ændret 2. validering og normalisering er ikke konsekvent fordelt for at have en konsekvent validering i middelware, så vi kan genbruge den i flere routes, og dermed undgå gentagelse af kode og gøre det lettere at vedligeholde og have en bedre validering .
 vi har også ændret 3. http- og dataansvaret er ikke helt korrekt modelleret fordi vi fik givet delete en content og vi har ændret hvordan vi laver id så det er mere korrekt og ikke giver fejl
+
+
 ## Afsluttende refleksion
 
 Alle i gruppen skal kunne forklare:
 
 Hvad der sker, når frontend sender en request til backend.
 
+serveren modetager requesten og sender den videre til den rigtige route og sender den videre til den rigtige controller og så vidre.
+
 Hvordan Express finder den rigtige route.
+
+fetch metoden og url'en bliver matchet med de routes der er sat op i serveren, og den route der matcher bliver kaldt.
 
 Hvor data bliver valideret.
 
+Data valideres i middleware, i validateId og validateCharacterData, som tjekker om id er et heltal og om karakterdataen er valid.
+
 Hvordan HTTP-statuskoder anvendes.
+
+HTTP-statuskoder bruges til at indikere resultatet af en HTTP-request. For eksempel, 200 betyder succes, 404 betyder "ikke fundet" og 500 betyder "intern serverfejl".
 
 Hvordan applikationen er opdelt.
 
+Applikationen er opdelt i flere lag: frontend, backend. Frontend håndterer brugergrænsefladen, backend håndterer logikken og data backend er opdelt i flere lag: routes, controllers og services.
+
 Hvordan I har testet funktionaliteten.
 
-I skal kunne demonstrere applikationen og forklare jeres kode.
+postman, hvor vi har testet alle routes med forskellige input og tjekket om de returnerer de forventede statuskoder og data.
+
 
 
