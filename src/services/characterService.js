@@ -1,7 +1,7 @@
 const characters = [
-    { id: 1, name: 'Luke Skywalker',role: 'Jedi Knight',planet: 'Tatooine' },
-    { id: 2, name: 'Darth Vader', role: 'Sith Lord', planet: 'Naboo' },
-    { id: 3, name: 'Leia Organa', role: 'Rebel Alliance Leader', planet: 'Alderaan'},
+    { id: 1, name: 'Luke Skywalker',role: 'Jedi',planet: 'Tatooine' },
+    { id: 2, name: 'Darth Vader', role: 'Sith', planet: 'Naboo' },
+    { id: 3, name: 'Leia Organa', role: 'Rebel', planet: 'Alderaan'},
 ];
 
 function getCharacters() {
@@ -61,5 +61,3 @@ module.exports = {
     updateCharacter,
     deleteCharacter
 };
-
-
