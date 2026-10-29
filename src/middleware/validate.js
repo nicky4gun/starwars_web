@@ -1,11 +1,14 @@
 
 function validateId(req, res, next) {
-    const id = Number(req.params.id);
+    const idString = req.params.id;
+    const id = Number(idString);
 
-    if (!Number.isInteger(id)) {
-        return res.status(400).json({ error: 'Invalid id. Must be a whole number.' })
+    if (!/^[1-9]\d*$/.test(idString) || !Number.isSafeInteger(id)) {
+        return res.status(400).json({ error: 'Invalid id. Must be a positive whole number.' });
     }
+
     req.characterId = id;
     next();
 }
+
 module.exports = { validateId };

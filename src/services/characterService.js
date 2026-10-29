@@ -4,6 +4,10 @@ const characters = [
     { id: 3, name: 'Leia Organa', role: 'Rebel', planet: 'Alderaan'},
 ];
 
+let nextCharacterId = characters.length > 0
+    ? Math.max(...characters.map(character => character.id)) + 1
+    : 1;
+
 function getCharacters() {
     return characters;
 }
@@ -14,7 +18,7 @@ function getCharacterById(id) {
 
 function createCharacter(character) {
     const newCharacter = {
-        id: characters.length > 0 ? Math.max(...characters.map(c => c.id)) + 1 : 1,
+        id: nextCharacterId++,
         name: character.name,
         role: character.role,
         planet: character.planet,
@@ -34,9 +38,9 @@ function updateCharacter(id, character) {
 
     const updatedCharacter = {
         id: characterId,
-        name: character.name || characters[characterIndex].name,
-        role: character.role || characters[characterIndex].role,
-        planet: character.planet || characters[characterIndex].planet
+        name: character.name,
+        role: character.role,
+        planet: character.planet
     };
 
     characters[characterIndex] = updatedCharacter;
@@ -51,7 +55,8 @@ function deleteCharacter(id) {
         return null;
     }
 
-    return characters.splice(characterIndex, 1);
+    const [deletedCharacter] = characters.splice(characterIndex, 1);
+    return deletedCharacter;
 }
 
 module.exports = {

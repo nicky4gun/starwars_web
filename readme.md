@@ -177,11 +177,21 @@ database, rate limit, validering i middelware,sletning af karakterer tilgenlig f
 
 
 ## opgave 7 C ai code review:
+ai's samlet vudering af vore projekt,
+
+Lagdelingen er påbegyndt fornuftigt: routes binder middleware og controllers sammen, mens servicen ejer karakterdata.
+Den vigtigste arkitektoniske svaghed er, at validering, normalisering og API-kontrakt ikke er defineret konsekvent mellem middleware, controller og service.
+Der findes kun en Postman collection og ingen automatiske tests i test/, så de tre områder bør især dækkes af integrationstests for ugyldige input, servicefejl samt POST/PUT/DELETE-responser.
 
 hvad den forslog 
 
-hvad vi har ladet den endre og hvorfor  
+1. Fejlhåndteringen eksponerer interne fejl til klienten
+2. Validering og normalisering er ikke konsekvent fordelt
+3.  HTTP- og dataansvaret er ikke helt korrekt modelleret
 
+hvad vi har ladet den endre og hvorfor  
+vi har ændret 2. validering og normalisering er ikke konsekvent fordelt for at have en konsekvent validering i middelware, så vi kan genbruge den i flere routes, og dermed undgå gentagelse af kode og gøre det lettere at vedligeholde og have en bedre validering .
+vi har også ændret 3. http- og dataansvaret er ikke helt korrekt modelleret fordi vi fik givet delete en content og vi har ændret hvordan vi laver id så det er mere korrekt og ikke giver fejl
 ## Afsluttende refleksion
 
 Alle i gruppen skal kunne forklare:

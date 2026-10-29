@@ -16,15 +16,7 @@ async function getCharacterById(req, res) {
 }
 
 async function createCharacter(req, res) {
-    const { name, role, planet } = req.body;
-
-    const character = {
-        name: name.trim(),
-        role: role.trim(),
-        planet: planet.trim()
-    };
-
-    const newCharacter = await characterService.createCharacter(character);
+    const newCharacter = await characterService.createCharacter(req.body);
     res.status(201).json({ message: 'Character created succesfully', newCharacter });
 }
 
@@ -45,7 +37,7 @@ async function deleteCharacter (req, res) {
         return res.status(404).json({ message: 'Character not found' });
     }
 
-    res.status(204).json({ message: 'Character deleted successfully' });
+    res.status(204).send();
 }
 
 
